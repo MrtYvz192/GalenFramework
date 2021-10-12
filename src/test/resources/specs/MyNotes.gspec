@@ -1,0 +1,44 @@
+
+@objects
+
+    header  #header
+        headline    .middle-wrapper
+        logo        #header-logo
+    
+    menu        #menu
+        tabs    ul
+
+
+    footer          #footer
+        signature   xpath   //div[@class="footer-signature"]
+
+
+= Main Section =
+
+    header:
+        inside screen 0px top left right
+        height 70px
+
+    header.headline:
+        height 69px
+
+    header.logo:
+        inside header.headline 0px left
+        height 48px
+        width 48px
+
+    menu:
+        height 63px
+        aligned vertically all header
+
+    menu.tabs:
+        height 63px
+
+
+
+    footer:
+        aligned vertically all menu
+
+
+    footer.signature:
+        text is "Copyright (c) 2015"
