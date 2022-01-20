@@ -1,5 +1,5 @@
 Feature: First test of Galen
-  @wip
+
   Scenario: testapp galen verification
     Given the user is on the testapp page
     And the page layout is checked

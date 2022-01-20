@@ -12,7 +12,7 @@ public class Hooks {
     @After
     public void reporting() throws IOException {
         new HtmlReportBuilder().build(TestBase.tests, "target/galen-html-reports/");
-        Driver.get().close();
+       // Driver.get().close();
     }
 
 }

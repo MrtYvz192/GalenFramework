@@ -65,4 +65,9 @@ public class TestAppStepDefs extends TestBase{
         layoutReport = Galen.checkLayout(Driver.get(), specSource, null);
         testAppMyNotesPage.updateReport(layoutReport,tests,"TestAppMyNotes Automation Using Galen Framework","Verify the MyNote page");
     }
+
+    @Given("the user lands on the home page")
+    public void the_user_lands_on_the_home_page() {
+        driver.get("https://gitlab.com/users/sign_in");
+    }
 }
