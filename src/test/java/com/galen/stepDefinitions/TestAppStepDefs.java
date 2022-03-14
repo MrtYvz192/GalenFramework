@@ -1,5 +1,6 @@
 package com.galen.stepDefinitions;
 
+import com.galen.pages.BasePage;
 import com.galen.pages.TestAppLoginPage;
 import com.galen.pages.TestAppMyNotesPage;
 import com.galen.pages.TestAppPage;
@@ -18,21 +19,25 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class TestAppStepDefs extends TestBase{
+public class TestAppStepDefs {
 
     private String specSource = "src/test/resources/specs/tutorial.gspec";
+
+    protected TestAppPage testAppPage = new TestAppPage();
+    protected TestAppLoginPage testAppLoginPage = new TestAppLoginPage();
+    protected TestAppMyNotesPage testAppMyNotesPage = new TestAppMyNotesPage();
 
 
     @Given("the user is on the testapp page")
     public void the_user_is_on_the_testapp_page() {
-        driver.get("http://testapp.galenframework.com/");
-        driver.manage().window().maximize();
+        Driver.get().get("http://testapp.galenframework.com/");
+        Driver.get().manage().window().maximize();
     }
 
     @Given("the page layout is checked")
     public void the_page_layout_is_checked() throws IOException {
-        layoutReport = Galen.checkLayout(Driver.get(), specSource, Arrays.asList("desktop"));
-        testAppPage.updateReport(layoutReport,tests,"TestApp Automation Using Galen Framework","Verify the elements");
+        testAppPage.layoutReport = Galen.checkLayout(Driver.get(), specSource, Arrays.asList("desktop"));
+        testAppPage.updateReport(testAppPage.layoutReport, BasePage.tests,"TestApp Automation Using Galen Framework","Verify the elements");
     }
 
     @When("the user clicks on the Login button")
@@ -62,12 +67,12 @@ public class TestAppStepDefs extends TestBase{
     public void the_layout_should_be_valid() throws IOException {
 
         specSource = "src/test/resources/specs/MyNotes.gspec";
-        layoutReport = Galen.checkLayout(Driver.get(), specSource, null);
-        testAppMyNotesPage.updateReport(layoutReport,tests,"TestAppMyNotes Automation Using Galen Framework","Verify the MyNote page");
+        testAppLoginPage.layoutReport = Galen.checkLayout(Driver.get(), specSource, null);
+        testAppMyNotesPage.updateReport(testAppLoginPage.layoutReport,BasePage.tests,"TestAppMyNotes Automation Using Galen Framework2","Verify the MyNote page");
     }
 
     @Given("the user lands on the home page")
     public void the_user_lands_on_the_home_page() {
-        driver.get("https://gitlab.com/users/sign_in");
+        Driver.get().get("https://gitlab.com/users/sign_in");
     }
 }

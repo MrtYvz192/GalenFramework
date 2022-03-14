@@ -47,7 +47,13 @@
         <dependency>
             <groupId>com.galenframework</groupId>
             <artifactId>galen-java-support</artifactId>
-            <version>2.4.0</version>
+            <version>2.4.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.9.0</version>
         </dependency>
 
 
@@ -57,13 +63,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>3.0.0-M5</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <runOrder>Alphabetical</runOrder>
                     <includes>
                         <include>**/*CukesRunner.java</include>
-                        <include>**/*FailedTestRunner.java</include>
+<!--                        <include>**/*FailedTestRunner.java</include>-->
                     </includes>
                 </configuration>
             </plugin>
@@ -84,9 +90,9 @@
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
                                 <param>**/cucumber*.json</param>
-                                <param>**/failedTests*.json</param>
+<!--                                <param>**/failedTests*.json</param>-->
                             </jsonFiles>
-                            <checkBuildResult>false</checkBuildResult>
+<!--                            <checkBuildResult>false</checkBuildResult>-->
                         </configuration>
                     </execution>
                 </executions>

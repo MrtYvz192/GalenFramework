@@ -22,7 +22,7 @@
         height 70px
 
     header.headline:
-        height 69px
+        height 70px
 
     header.logo:
         inside header.headline 0px left
@@ -30,7 +30,7 @@
         width 48px
 
     menu:
-        height 63px
+        height 64px
         aligned vertically all header
 
     menu.tabs: 
@@ -38,13 +38,13 @@
 
 
     welcomePanel:
-        height 345px
+        height 346px
         near menu ~20px bottom
         centered horizontally inside screen
 
     footer:
         aligned vertically all menu
-        near welcomePanel 85px bottom
+        near welcomePanel 84px bottom
 
     footer.signature:
         text is "Copyright (c) 2015"
